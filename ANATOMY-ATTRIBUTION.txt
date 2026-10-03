@@ -1,0 +1,13 @@
+StrideLab 2.6.4 anatomical geometry attribution
+
+The anatomical geometry in this release is adapted from Z-Anatomy and BodyParts3D. The legacy OpenSim Gait2392/Arm26 geometry used by earlier versions is not included in this release.
+
+Required model attribution:
+"BodyParts3D - The Database Center for Life Science - CC-BY-SA 2.1 Japan"
+"Z-Anatomy - The libre 3D atlas of anatomy - CC-BY-SA 4.0"
+
+The adapted anatomical geometry and derivative rigging/binding data are distributed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0):
+https://creativecommons.org/licenses/by-sa/4.0/
+https://creativecommons.org/licenses/by-sa/4.0/legalcode
+
+See Z-ANATOMY-ATTRIBUTION.txt in this same directory for credited authors, pinned upstream sources, changes, license scope and reuse conditions. No endorsement by the original authors is implied.

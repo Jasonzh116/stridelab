@@ -1,0 +1,57 @@
+步态工坊：肌骨模型来源与许可 / Anatomical model attribution
+
+File references in this notice are relative to the source/ directory (or its extracted source archive). The deployed index.html also embeds the adapted model and rigging data.
+
+The anatomical geometry in this version is adapted from Z-Anatomy, using bones, cartilage and selected major muscles in one original coordinate frame. It replaces the mixed OpenSim/procedural model used by earlier versions.
+
+Required model attribution:
+“BodyParts3D - The Database Center for Life Science - CC-BY-SA 2.1 Japan”
+“Z-Anatomy - The libre 3D atlas of anatomy - CC-BY-SA 4.0”
+
+Authors credited by the source project:
+Kousaku OKUBO (original BodyParts3D model)
+Gauthier KERVYN (design, 3D, anatomy)
+Marcin ZIELINSKI (Blender add-on)
+Lluis VINENT (Unity development)
+
+Official source repository:
+https://github.com/Z-Anatomy/Models-of-human-anatomy
+Pinned revision: cc407044f247e5ed31de42aab578093b24064e3e
+Source README and license:
+https://github.com/Z-Anatomy/Models-of-human-anatomy/blob/cc407044f247e5ed31de42aab578093b24064e3e/Readme.md
+https://github.com/Z-Anatomy/Models-of-human-anatomy/blob/cc407044f247e5ed31de42aab578093b24064e3e/License.txt
+
+Source archives:
+Z-Anatomy.zip — SHA-256 e029688545627bd0214b269e1063143abb580aad72b2c2445d6d8a9a0d9da736
+Z-Biomechanics.7z — SHA-256 0a74b2fa3c47db925b06241fa38c89b0811e58a78ee28ec440cd460e279cf22b
+The first supplies the selected mesh surfaces. The second supplies skeletal joint-reference locations. Its animation clips and application scripts are not used by this viewer.
+
+License for this adapted model and its derivative geometry/rigging data:
+Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+https://creativecommons.org/licenses/by-sa/4.0/
+https://creativecommons.org/licenses/by-sa/4.0/legalcode
+The licensed material is supplied as-is, without warranties, as specified in Section 5 of that license.
+BodyParts3D source attribution: https://dbarchive.biosciencedbc.jp/en/bodyparts3d/desc.html
+
+Changes made for this app (2026-10-01):
+- Selected 313 bone/cartilage structures and 116 major muscle structures; excluded internal organs, nervous system and inner-ear assets with separate noncommercial credits.
+- Extracted the original object transforms; uniformly changed axes from Blender X-left/Z-up/−Y-forward to X-left/Y-up/Z-forward. No per-bone rescaling or independent centering.
+- Reduced polygon counts while preserving original tendon/cartilage material boundaries, then packed the surfaces for offline use.
+- Derived hip and shoulder pivot positions from source articular surfaces and other joint references from the published skeletal rig.
+- Added an original simplified 21-joint viewer rig, smooth skin weights, illustrative gait, user angle offsets, and ground-reference alignment. These are not a validated biomechanical simulation.
+- Added high-detail WebGL rendering and a clearly labelled lower-detail Canvas 2D compatibility representation.
+
+The source project also credits the University of Dundee / CAHID for “Cranial Nerves and Foramina” (CC BY 4.0). The full source README is retained in model-assets/SOURCE-README.md; noncommercial inner-ear/kidney assets and nervous-system models were not selected.
+
+The original authors do not endorse this application. No additional restrictions are imposed on reuse of the adapted model under CC BY-SA 4.0. Retain these credits and license and identify further modifications when redistributing it. Application code written for this viewer is separate from the licensed anatomical content.
+
+Runtime libraries:
+Three.js 0.180.0 — MIT
+fflate 0.8.2 — MIT
+esbuild 0.25.10 — MIT (build tool only)
+
+2.6 derived digit rig: 30 hand joints appended from source rig-data.json pivots/axes; original21 node identities and all mesh positions/faces/colors preserved. Hand phalanges and selected distal tendon weights are rebound to these joints. Mild authored flexion and reduced splay are illustrative, not recorded hand motion. Derived assets and reproducible hand-asset generator retain CC BY-SA4.0; see model-assets/hand-rig.json and model-assets/build-hand-rig.py.
+
+2.6.1 hand correction: authored full finger flexion and external thumb closure, plus source-frame forearm twist to orient palms inward. Existing atlas joint pivots/axes and CC BY-SA4.0 licensing retained. This is illustrative hand posing, not captured hand movement or clinical pronation measurement.
+
+2.6.4 back attachment repair: source Interspinous ligaments now follows its source vertebral host frames (24 high/4 low vertex bindings). The posterior medial origin fields in bilateral Latissimus dorsi and source-named Descending part of trapezius are made consistent with these attachments (1936 high/72 low vertices), with a smooth lateral transition. Source positions, faces, colors, all51 nodes, arm influences and other tissues remain unchanged. Derived bindings retain CC BY-SA4.0. Reproduce after model-assets/build-hand-rig.py using model-assets/patch_interspinous.py then model-assets/patch_back_origins.py. See model-assets/interspinous-binding.json and model-assets/back-origin-binding.json. This is a geometric attachment repair, not a physiological ligament or full spine collision model.

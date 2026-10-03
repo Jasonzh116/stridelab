@@ -1,0 +1,31 @@
+RBDS motion reference
+
+Fukuchi, Reginaldo; Fukuchi, Claudiane; Duarte, Marcos (2023). A public data set of running biomechanics and the effects of running speed on lower extremity kinematics and kinetics. figshare. Dataset, version 5. https://doi.org/10.6084/m9.figshare.4543435.v5
+
+Companion paper:
+Fukuchi, Reginaldo K.; Fukuchi, Claudiane A.; Duarte, Marcos (2017). A public dataset of running biomechanics and the effects of running speed on lower extremity kinematics and kinetics. PeerJ 5:e3298. https://doi.org/10.7717/peerj.3298
+
+Source file: RBDS003processed.txt
+Source download: https://ndownloader.figshare.com/files/7825030
+Source file MD5: 957b96d3424050fc8924aca794eb6ea0
+
+License: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+Full license text on the deployed site: MOTION-CC-BY-4.0.txt
+Full license text in the source bundle: motion-reference/LICENSE-CC-BY-4.0.txt
+Source-bundle paths below are relative to the source/ directory (or its extracted source archive).
+License evidence: official figshare dataset record, https://api.figshare.com/v2/articles/4543435 (license field)
+
+Selected reference: participant RBDS003, rearfoot-strike treadmill running at 2.5, 3.5, and 4.5 m/s. This is one participant's mean movement, not a universal normal gait or medical recommendation.
+
+The licensed material is supplied without warranties as specified in Section 5 of the included license.
+
+Speed-specific timing is independently computed from the three matching raw force files. See motion-reference/timing-RBDS003-all-speeds.json and motion-reference/derive_speed_timing.py for exact URLs, hashes, filter settings, event validation, and calculations.
+
+Application modifications: bilateral sagittal curves averaged and mirrored at a half-cycle offset; +6.1 degrees knee neutral registration to avoid the source coordinate's negative minima; periodic endpoint averaging and shape-preserving interpolation; geometric retargeting to the separate Z-Anatomy skeleton. Contact endpoints use processed-curve finite/NaN boundaries, while cadence uses raw-derived two-step stride durations. Adapted stride and mapped average velocity differ from the treadmill reference speeds and are shown separately. This is a participant-specific reference, not a population norm or individualized prediction. No source forces or moments are displayed as computed model predictions.
+
+Upper-body coordination revision (2.4):
+The RBDS processed curves and published marker protocol cover pelvis/lower limbs, not thorax, shoulders, elbows or wrists. No upper-body motion in this application is claimed as RBDS003 measurement. Table 1: https://pmc.ncbi.nlm.nih.gov/articles/PMC5426356/
+The application adds bounded periodic chest rotation/tilt, counter-rotated head, contralateral shoulder excursion, varying elbow flexion and subtle forearm/wrist motion. These are authored illustrative coordination rules. Lower-body reference arrays, cadence/contact timing and fixed atlas segment lengths remain unchanged. Segment COM is recomputed from the actually posed torso/head/arms, without dynamic force prediction. No endorsement by the dataset creators is implied.
+
+2.6 spatial extension: measured sagittal arrays/timing remain unchanged. Hip AngX/AngY channels exist in the local RBDS003 source; the paper describes Cardan Z-X-Y, but bilateral anatomical sign mapping is not established in this derived rig, so these channels are NOT used as measured spatial motion. No pelvis/thorax/arm angles are bundled. Authored pelvis-thorax counterrotation and new coronal/transverse controls use declared rig axes with 3D contact IK, not measured trajectories or force dynamics. See RUNNING-CONSTRAINTS.md for coordinate order, signs, retargeting differences and limits.
